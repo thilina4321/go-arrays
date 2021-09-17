@@ -16,4 +16,13 @@ func main() {
 	doubleValue := doubles.DoubleNumber(myAge)
 	println(doubleValue)
 	println(age)
+
+	print("==============")
+	newFunc()
+}
+
+func newFunc() {
+	game := "cricket"
+	myGame := &game
+	print(myGame)
 }
