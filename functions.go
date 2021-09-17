@@ -1,12 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/func/add"
+)
 
 func main() {
-	sum := add(1, 2)
+	sum := add.Add(2, 3)
 	fmt.Println(sum)
-}
-
-func add(num1 int, num2 int) int {
-	return num1 + num2
 }
