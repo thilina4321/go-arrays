@@ -2,32 +2,39 @@ package main
 
 import "fmt"
 
-type User struct {
-	name string
-	age  int
+type Book struct {
+	id          string
+	title       string
+	description string
+	price       float64
 }
 
-func NewUser(name string, age int) *User {
-	user := User{
-		name, age,
-	}
+func (book Book) printBook() {
+	fmt.Println(book)
+}
 
-	return &user
+func NewBook(id string, title string, description string, price float64) *Book {
+	book := Book{
+		id,
+		title,
+		description,
+		price,
+	}
+	return &book
 }
 
 func main() {
-	print("hello world")
+	print("Book from direct way")
+	myBook1 := Book{
+		"Book1",
+		"Title1", "Desc1", 10,
+	}
+	fmt.Println(myBook1)
 
-	// name := "thilina"
-	// age := 23
+	print("Book from function way")
+	myBook2 := NewBook("Book2", "Title2", "Desc2", 20)
+	fmt.Println(myBook2)
 
-	// var user User = User{
-	// 	age:  age,
-	// 	name: name,
-	// }
-	// fmt.Println(user)
-
-	user2 := NewUser("thilina", 23)
-	fmt.Println(user2)
-
+	print("Book from connected function")
+	myBook2.printBook()
 }
