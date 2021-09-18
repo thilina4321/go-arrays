@@ -27,3 +27,15 @@ func maps() {
 
 	fmt.Println(maps["google"])
 }
+
+type Book struct {
+	id    int
+	title string
+}
+
+func NewBook(id int, title string) Book {
+	return Book{
+		id,
+		title,
+	}
+}
